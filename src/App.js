@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
 
-class App extends Component {
-  render() {
+import { StoreContainer } from './components/StoreContainer';
+import ButtonGroup from './components/ButtonGroup';
+import Layout from './components/Layout';
+import LoginButton from './components/LoginButton';
+
+function App() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div className="App">
+            <header className="App-header">
+            </header>
+            <section>
+                <Layout>
+                    <StoreContainer>
+                        <LoginButton actionType='logIn' text='Log In' />
+                        <LoginButton actionType='logOut' text='Log Out' />
+                        <br />
+                        <br />
+                        <ButtonGroup />
+                    </StoreContainer>
+                </Layout>
+            </section>
+        </div>
     );
-  }
 }
 
 export default App;
